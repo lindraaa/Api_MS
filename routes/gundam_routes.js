@@ -1,8 +1,9 @@
 const express = require("express");
-const { index } = require("../controllers/gundam_controllers");
+const { indexController,newGController } = require("../controllers/gundam_controllers");
 const router = express.Router();
 
 
-router.get("/",index)
+router.get("/",indexController)
+router.post("/newGundam",newGController)
 
 module.exports = router;

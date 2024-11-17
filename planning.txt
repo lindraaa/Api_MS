@@ -23,5 +23,3 @@ express-crud-api/
 ├── index.js             # Main entry point of the app (this is where the server is started)
 └── README.md            # Project documentation
 
-
-1. Create first the ROUTING 

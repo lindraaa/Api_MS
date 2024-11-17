@@ -3,24 +3,24 @@ const Schema = mongoose.Schema;
 
 
 const GundamSchema = new Schema({
-    name:{
-        type:String,
-        required:true
+    name: {
+        type: String,
+        required: true
     },
-    description:{
-        type:String,
-        required:true
+    description: {
+        type: String,
+        required: true
     },
-    catergory:{
-        type:String,
-        enum:["HG","NG","PG","SD","RG"],
-        required:true
+    category: {
+        type: String,
+        enum: ['HG','NG','PG','SD','RG'],  
+        required: true
     },
-    price:{
-        type:Number,
-        required:true
+    price: {
+        type: Number,
+        required: true
     }
 
-}) 
+})
 
-module.exports = mongoose.model("Gundam",GundamSchema)
+module.exports = mongoose.model("Gundam", GundamSchema)
