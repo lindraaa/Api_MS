@@ -15,9 +15,10 @@ module.exports.indexController = async (req,res)=>{
 
 module.exports.newGController = async (req,res)=>{
     try{
-        console.log(req.body)
-        const {name,description,category,price} = req.body;
-        const new_gundam = new Gundam({name,description,category,price})
+        // console.log(req.body)
+        // const {name,description,category,price} = req.body;
+        // const new_gundam = new Gundam({name,description,category,price})
+        const new_gundam = new Gundam({...req.body})
         await new_gundam.save();
         return res.status(201).json({
             message:"New Gundam Successfully Created"
