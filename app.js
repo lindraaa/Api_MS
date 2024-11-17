@@ -1,12 +1,14 @@
+require('dotenv').config()
+
 const express = require("express");
 const app = express()
-const PORT  = 9000;
+const PORT  = process.env.PORT || 9000;
 const mongoose = require("mongoose");
 
 //routes
 const gundam_routes = require("./routes/gundam_routes")
 
-mongoose.connect("mongodb://localhost:27017/MSuit_Api")
+mongoose.connect(process.env.LOCAL_DATABASE)
     .then(()=>{
         console.log("Database Connected")
     })
