@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 
-const gundamSchema = new Schema({
+const GundamSchema = new Schema({
     name:{
         type:String,
         required:true
@@ -22,3 +22,5 @@ const gundamSchema = new Schema({
     }
 
 }) 
+
+module.exports = mongoose.model("Gundam",GundamSchema)
