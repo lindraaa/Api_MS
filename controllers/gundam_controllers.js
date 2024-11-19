@@ -1,5 +1,6 @@
 const Gundam = require("../models/gundam_models")
 const mongoose = require("mongoose")
+
 module.exports.indexController = async (req, res) => {
     // const MobileSuit = new Gundam({
     //     name:"Strike Freedom Gundam",
@@ -39,6 +40,20 @@ module.exports.delGController = async (req, res) => {
         }
     } catch (err) {
         return res.status(500).json({message:"Server Error!"})
+
+    }
+}
+
+module.exports.updGController = async (req,res)=>{
+    const {id} = req.params //first get the id 
+    const gundam_info = {...req.body}; // then catch the details
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({message:"Invalid ID"})
+
+    try{
+        const gundam = await Gundam.findByIdAndUpdate(id,gundam_info,{new:true})
+        res.status(200).json({message:"Updated Succesfully"})
+    }catch(err){
+        res.status(500).json({message:"Server Error"})
 
     }
 }
